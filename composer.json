@@ -1,0 +1,19 @@
+{
+    "name": "stage/portfolio",
+    "description": "Portfolio website",
+    "type": "project",
+    "require": {
+        "kyrill/php-route": "dev-main",
+        "twig/twig": "3.x-dev"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stage\\Portfolio\\": "modules/core",
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,88 @@
+{% extends "layout.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="flex bg-sky-800 w-full h-screen text-pink-200">
+
+        <div class="flex flex-col p-12 gap-12 m-auto text-center">
+            <h1 class="hidden-animation transition-all duration-1000 text-[18rem]">Welkom!</h1>
+            <h2 class="hidden-animation transition-all duration-1000 delay-150 text-4xl">Portfolio website: Sep de Graaff</h2>
+        </div>
+
+    </div>
+
+    <div class="flex bg-indigo-800 w-full h-screen justify-center text-red-300">
+
+        <div class="flex flex-col p-12 gap-12 items-center text-center">
+            <h2 class="hidden-animation transition-all duration-1000 m-auto text-[10rem]">Zullen we beginnen?</h2>
+
+            <p class="hidden-animation transition-all duration-1000 delay-150 text-xl absolute self-end justify-self-end">Gebruik het menu om te navigeren &rarr;</p>
+        </div>
+
+    </div>
+
+    <div class="flex flex-col bg-sky-800 w-full h-screen text-pink-200">
+
+        <div class="flex flex-col p-12 gap-12">
+
+            <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
+                Over mij
+            </h2>
+            <p class="hidden-animation transition-all duration-1000 delay-150 text-xl max-w-[1200px] pl-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at est iste, modi molestias nihil numquam odit veniam. Beatae corporis impedit ipsum iure praesentium quaerat quam ratione reiciendis ullam vitae.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio minima, quaerat? Cum, harum, suscipit. Beatae consequatur dolores facere laudantium quam! Inventore repellendus repudiandae sed! Facere nisi obcaecati porro rem voluptatem.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="flex bg-indigo-800 w-full h-screen text-red-300">
+
+        <div class="flex flex-col p-12 gap-12">
+            <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
+                Trotse projecten
+            </h2>
+
+            <ul class="grid grid-cols-2 place-items-center gap-4">
+                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
+
+                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
+                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                    </div>
+
+                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project1">
+                </li>
+
+                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
+
+                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
+                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                    </div>
+
+                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project2">
+                </li>
+
+                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
+
+                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
+                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                    </div>
+
+                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project3">
+                </li>
+
+                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
+
+                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
+                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                    </div>
+
+                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project4">
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}
