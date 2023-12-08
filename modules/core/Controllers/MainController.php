@@ -15,6 +15,12 @@ class MainController extends BaseController
      */
     public function index(): void
     {
-        $this->render('home.twig');
+        $mainBgOne = "bg-sky-800";
+        $mainBgTwo = "bg-indigo-800";
+
+        $this->render('home.twig', [
+            'mainBgOne' => $mainBgOne,
+            'mainBgtwo' => $mainBgTwo
+        ]);
     }
 }

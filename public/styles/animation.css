@@ -5,6 +5,12 @@
     transform: translateX(-100%);
 }
 
+.menu
+{
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
 .show-animation
 {
     opacity: 1;

@@ -2,7 +2,7 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
-    <div class="flex bg-sky-800 w-full h-screen text-pink-200 snap-y snap-mandatory">
+    <div class="flex {{ mainBgOne}} w-full h-screen text-pink-200">
 
         <div class="flex flex-col p-12 gap-12 m-auto text-center">
             <h1 class="hidden-animation transition-all duration-1000 text-[18rem]">Welkom!</h1>
@@ -11,17 +11,28 @@
 
     </div>
 
-    <div class="flex bg-indigo-800 w-full h-screen justify-center text-red-300 snap-y snap-mandatory">
+    <div class="flex {{ mainBgtwo }} w-full h-screen justify-center text-red-300">
 
-        <div class="flex flex-col p-12 gap-12 items-center text-center">
+        <div class="flex flex-col gap-12 items-center w-full">
+
+            <div class="flex flex-row gap-4 absolute self-end justify-self-end p-16">
+
+                <p class="hidden-animation transition-all duration-1000 text-xl">Gebruik het menu om te navigeren &rarr;</p>
+
+                <div class="menu flex flex-col transition-all duration-1000 delay-300">
+                    <a href="#Over-mij">Over mij</a>
+                    <a href="#Trotse-projecten">Trotse projecten</a>
+                </div>
+
+            </div>
+
             <h2 class="hidden-animation transition-all duration-1000 m-auto text-[10rem]">Zullen we beginnen?</h2>
 
-            <p class="hidden-animation transition-all duration-1000 delay-150 text-xl absolute self-end justify-self-end">Gebruik het menu om te navigeren &rarr;</p>
         </div>
 
     </div>
 
-    <div class="flex flex-col bg-sky-800 w-full h-screen text-pink-200">
+    <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen text-pink-200">
 
         <div class="flex flex-col p-12 gap-12">
 
@@ -37,7 +48,7 @@
 
     </div>
 
-    <div class="flex bg-indigo-800 w-full h-screen text-red-300 snap-y snap-mandatory">
+    <div id="Trotse-projecten" class="flex bg-indigo-800 w-full h-screen text-red-300">
 
         <div class="flex flex-col p-12 gap-12">
             <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
@@ -45,7 +56,8 @@
             </h2>
 
             <ul class="grid grid-cols-2 place-items-center gap-4">
-                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
+                {% for i in range(0, 3) %}
+                <li class="flex hidden-animation transition-all duration-1000 delay-[150ms] min-w-max project-holder">
 
                     <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
                         <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
@@ -53,34 +65,7 @@
 
                     <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project1">
                 </li>
-
-                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
-
-                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
-                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
-                    </div>
-
-                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project2">
-                </li>
-
-                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
-
-                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
-                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
-                    </div>
-
-                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project3">
-                </li>
-
-                <li class="flex hidden-animation transition-all duration-1000 delay-150 min-w-max project-holder">
-
-                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full bg-sky-800 rounded-2xl project">
-                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
-                    </div>
-
-                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project4">
-                </li>
-
+                {% endfor %}
             </ul>
 
         </div>

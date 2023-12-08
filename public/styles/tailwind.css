@@ -540,12 +540,36 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
 .left-0 {
   left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .m-auto {
@@ -605,6 +629,10 @@ video {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -637,8 +665,24 @@ video {
   justify-self: end;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.scroll-auto {
+  scroll-behavior: auto;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-b-2 {
@@ -647,6 +691,10 @@ video {
 
 .border-b-transparent {
   border-bottom-color: transparent;
+}
+
+.bg-\[\#075985\]\/80 {
+  background-color: rgb(7 89 133 / 0.8);
 }
 
 .bg-indigo-800 {
@@ -659,16 +707,16 @@ video {
   background-color: rgb(7 89 133 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#078559\]\/80 {
-  background-color: rgb(7 133 89 / 0.8);
-}
-
-.bg-\[\#075985\]\/80 {
-  background-color: rgb(7 89 133 / 0.8);
-}
-
 .p-12 {
   padding: 3rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-16 {
+  padding: 4rem;
 }
 
 .pl-4 {
@@ -702,6 +750,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
 .text-pink-200 {
   --tw-text-opacity: 1;
   color: rgb(251 207 232 / var(--tw-text-opacity));
@@ -712,6 +765,11 @@ video {
   color: rgb(252 165 165 / var(--tw-text-opacity));
 }
 
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -719,18 +777,6 @@ video {
 
 .opacity-0 {
   opacity: 0;
-}
-
-.opacity-50 {
-  opacity: 0.5;
-}
-
-.opacity-80 {
-  opacity: 0.8;
-}
-
-.opacity-10 {
-  opacity: 0.1;
 }
 
 .opacity-100 {
@@ -751,6 +797,14 @@ video {
 
 .delay-150 {
   transition-delay: 150ms;
+}
+
+.delay-\[150ms\] {
+  transition-delay: 150ms;
+}
+
+.delay-300 {
+  transition-delay: 300ms;
 }
 
 .duration-1000 {
