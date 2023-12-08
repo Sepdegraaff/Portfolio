@@ -17,6 +17,8 @@
     transform: translateX(0);
 }
 
+
+
 @media (prefers-reduced-motion) {
     .hidden-animation
     {
