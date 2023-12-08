@@ -568,6 +568,10 @@ video {
   top: 4rem;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -641,6 +645,11 @@ video {
 
 .max-w-\[1200px\] {
   max-width: 1200px;
+}
+
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 
 .cursor-pointer {
@@ -824,6 +833,11 @@ video {
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-pink-200 {

@@ -2,6 +2,7 @@
 
 namespace Stage\Portfolio\Controllers;
 
+use Stage\Portfolio\Functions\DBconnect;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -26,5 +27,11 @@ abstract class BaseController
     public function render(string $template, array $arguments = []): void
     {
         echo $this->twig->render($template, $arguments);
+    }
+
+    public function getConnection(): void
+    {
+        $connection = new DBconnect();
+        $connection->connection();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Stage\Portfolio\Controllers;
 
+use Stage\Portfolio\Functions\DataGetter;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -22,5 +23,10 @@ class MainController extends BaseController
             'mainBgOne' => $mainBgOne,
             'mainBgtwo' => $mainBgTwo
         ]);
+    }
+
+    public function getData()
+    {
+        $data = new DataGetter();
     }
 }

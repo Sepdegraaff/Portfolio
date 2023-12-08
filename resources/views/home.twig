@@ -11,7 +11,7 @@
 
     </div>
 
-    <div class="flex {{ mainBgtwo }} w-full h-screen justify-center text-red-300">
+    <div id="navigation" class="flex {{ mainBgtwo }} w-full h-screen justify-center text-red-300">
 
         <div class="flex flex-col gap-12 items-center w-full">
 
@@ -24,8 +24,8 @@
                 </div>
 
                 <div id="menu" class="hidden flex-col min-w-[125px] transition-all duration-1000 delay-300">
-                    <a class="menuLink hover:scale-125 hover:underline transition-all" href="#Over-mij">Over mij</a>
-                    <a class="menuLink hover:scale-125 hover:underline transition-all" href="#Trotse-projecten">Trotse projecten</a>
+                    <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Over-mij">Over mij</a>
+                    <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Trotse-projecten">Trotse projecten</a>
                 </div>
 
             </div>
@@ -38,9 +38,13 @@
 
     <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen text-pink-200">
 
+        <div class="flex absolute right-0 p-12">
+            <a class="text-2xl" href="#navigation">&uarr;</a>
+        </div>
+
         <div class="flex flex-col p-12 gap-12">
 
-            <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
+            <h2 class="hidden-animation transition-all duration-1000 text-[10rem] max-w-max">
                 Over mij
             </h2>
             <p class="hidden-animation transition-all duration-1000 delay-150 text-xl max-w-[1200px] pl-4">
@@ -52,7 +56,11 @@
 
     </div>
 
-    <div id="Trotse-projecten" class="flex bg-indigo-800 w-full h-screen text-red-300">
+    <div id="Trotse-projecten" class="flex {{ mainBgtwo }} w-full h-screen text-red-300">
+
+        <div class="flex absolute right-0 p-12">
+            <a class="text-2xl" href="#navigation">&uarr;</a>
+        </div>
 
         <div class="flex flex-col p-12 gap-12">
             <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
@@ -60,8 +68,8 @@
             </h2>
 
             <ul class="grid grid-cols-2 place-items-center gap-4">
-                {% for i in range(0, 3) %}
-                <li class="flex hidden-animation transition-all duration-1000 delay-[150ms] min-w-max project-holder">
+                {% for i in range(low=150, high=600, step=150) %}
+                <li style="transition-delay: {{ i }}ms;" class="flex hidden-animation transition-all duration-1000  min-w-max project-holder">
 
                     <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
                         <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
