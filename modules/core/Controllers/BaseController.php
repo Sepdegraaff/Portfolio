@@ -29,9 +29,8 @@ abstract class BaseController
         echo $this->twig->render($template, $arguments);
     }
 
-    public function getConnection(): void
+    public function getConnection(): ?\mysqli
     {
-        $connection = new DBconnect();
-        $connection->connection();
+        return (new DBconnect())->connection();
     }
 }

@@ -19,14 +19,17 @@ class MainController extends BaseController
         $mainBgOne = "bg-sky-800";
         $mainBgTwo = "bg-indigo-800";
 
+        $projects = $this->getData();
+
         $this->render('home.twig', [
             'mainBgOne' => $mainBgOne,
-            'mainBgtwo' => $mainBgTwo
+            'mainBgtwo' => $mainBgTwo,
+            'projects' => $projects
         ]);
     }
 
-    public function getData()
+    public function getData(): false|array
     {
-        $data = new DataGetter();
+        return (new DataGetter())->getData($this->getConnection(), "projects");
     }
 }

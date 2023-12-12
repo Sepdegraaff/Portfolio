@@ -68,15 +68,16 @@
             </h2>
 
             <ul class="grid grid-cols-2 place-items-center gap-4">
-                {% for i in range(low=150, high=600, step=150) %}
-                <li style="transition-delay: {{ i }}ms;" class="flex hidden-animation transition-all duration-1000  min-w-max project-holder">
+                {% for project in projects%}
+                    {% set delay = 150 + loop.index * 50 %}
+                    <li style="transition-delay: {{ delay }}ms;" class="flex hidden-animation transition-all duration-1000  min-w-max project-holder">
 
-                    <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
-                        <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
-                    </div>
+                        <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
+                            <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                        </div>
 
-                    <img class="w-[30rem] rounded-2xl" src="images/projects/Todo4Uv2/main-list-showcase.png" alt="project1">
-                </li>
+                        <img class="w-[30rem] rounded-2xl" src="images/projects/{{ projects[0].main_image_link }}" alt="project1">
+                    </li>
                 {% endfor %}
             </ul>
 
