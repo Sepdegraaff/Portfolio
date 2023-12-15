@@ -2,7 +2,7 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
-    <div class="flex {{ mainBgOne}} w-full h-screen text-pink-200">
+    <div class="flex {{ mainBgOne}} w-full h-screen max-h-screen text-pink-200">
 
         <div class="flex flex-col p-12 gap-12 m-auto text-center">
             <h1 class="hidden-animation transition-all duration-1000 text-[18rem]">Welkom!</h1>
@@ -11,7 +11,7 @@
 
     </div>
 
-    <div id="navigation" class="flex {{ mainBgtwo }} w-full h-screen justify-center text-red-300">
+    <div id="navigation" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen justify-center text-red-300">
 
         <div class="flex flex-col gap-12 items-center w-full">
 
@@ -19,7 +19,7 @@
 
                 <p class="hidden-animation transition-all duration-1000 text-xl">Gebruik het menu om te navigeren &rarr;</p>
 
-                <div id="menuOpen" class="menu flex min-w-[125px] text-center justify-center cursor-pointer rounded-2xl bg-red-300 border-solid border-2 border-black/50 text-black transition-all duration-1000 delay-300">
+                <div id="menuOpen" class="menu flex min-w-[125px] text-center items-center justify-center cursor-pointer rounded-2xl bg-red-300 shadow-2xl text-black transition-all duration-1000 delay-300">
                     <span>Menu</span>
                 </div>
 
@@ -30,13 +30,15 @@
 
             </div>
 
-            <h2 class="hidden-animation transition-all duration-1000 m-auto text-[10rem]">Zullen we beginnen?</h2>
+            <div class="flex flex-row h-full justify-center items-center">
+                <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">Zullen we beginnen?</h2>
+            </div>
 
         </div>
 
     </div>
 
-    <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen text-pink-200">
+    <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen max-h-screen text-pink-200">
 
         <div class="flex absolute right-0 p-12">
             <a class="text-2xl" href="#navigation">&uarr;</a>
@@ -56,9 +58,15 @@
 
     </div>
 
-    <div id="Trotse-projecten" class="flex {{ mainBgtwo }} w-full h-screen text-red-300">
+    <div id="Trotse-projecten" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen text-red-300">
 
-        <div class="flex absolute right-0 p-12">
+        <div id="project-popup" class="absolute z-20 hidden w-full h-full bg-gray-950/50">
+            <div id="project" class="flex flex-col max-w-[95%] h-[800px] xl:max-w-[1400px] px-12 {{ mainBgOne }} rounded-2xl m-auto justify-center">
+
+            </div>
+        </div>
+
+        <div class="flex absolute right-0 p-12 z-50">
             <a class="text-2xl" href="#navigation">&uarr;</a>
         </div>
 
@@ -67,20 +75,22 @@
                 Trotse projecten
             </h2>
 
-            <ul class="grid grid-cols-2 place-items-center gap-4">
-                {% for project in projects%}
-                    {% set delay = 150 + loop.index * 50 %}
-                    <li style="transition-delay: {{ delay }}ms;" class="flex hidden-animation transition-all duration-1000  min-w-max project-holder">
+            <ul id="listHide" class="grid grid-cols-2 max-w-max gap-12">
+                {% for project in projects %}
+                    {% set delay = loop.index * 150 %}
+                    <li style="transition-delay: {{ delay }}ms;" class="flex hidden-animation transition-all duration-1000 project-holder max-w-max">
 
                         <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
-                            <a class="border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200" href="/">Lees meer</a>
+                            <span data-project-id="{{ projects[loop.index0].id }}" class="pop-up-opener border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200 cursor-pointer">Lees meer</span>
                         </div>
 
-                        <img class="w-[30rem] rounded-2xl" src="images/projects/{{ projects[0].main_image_link }}" alt="project1">
+                        <img class="w-[30rem] rounded-2xl" src="images/projects/{{ projects[loop.index0].main_image_link }}" alt="project1">
+
                     </li>
                 {% endfor %}
             </ul>
 
         </div>
+
     </div>
 {% endblock %}

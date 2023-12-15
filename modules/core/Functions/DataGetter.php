@@ -4,9 +4,17 @@ namespace Stage\Portfolio\Functions;
 
 class DataGetter
 {
-    public function getData($conn, string $table): array|false
+    public function getData($conn, string $table, int $id = null): array|false
     {
-        $stmt = $conn->prepare("SELECT * FROM $table");
+        if ($id !== null)
+        {
+            $stmt = $conn->prepare("SELECT * FROM $table WHERE id = ?");
+            $stmt->bind_param("i", $id);
+        }
+        else
+        {
+            $stmt = $conn->prepare("SELECT * FROM $table");
+        }
 
         if ($stmt)
         {
