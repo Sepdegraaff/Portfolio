@@ -16,20 +16,19 @@ class MainController extends BaseController
      */
     public function index(): void
     {
-        $mainBgOne = "bg-sky-800";
-        $mainBgTwo = "bg-indigo-800";
+        $mainBgOne = "bg-gray-800";
+        $mainBgTwo = "bg-gray-600";
 
-        $projects = $this->getData();
+        $DataGetter = new DataGetter($this->getConnection());
+        $projects = $DataGetter->getData("projects");
+
+        $paragraphData = $DataGetter->getData("textparagraphdata", 1);
 
         $this->render('home.twig', [
             'mainBgOne' => $mainBgOne,
             'mainBgtwo' => $mainBgTwo,
-            'projects' => $projects
+            'projects' => $projects,
+            'paragraphdata' => $paragraphData
         ]);
-    }
-
-    public function getData(): false|array
-    {
-        return (new DataGetter())->getData($this->getConnection(), "projects");
     }
 }

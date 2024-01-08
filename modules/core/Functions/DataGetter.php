@@ -2,18 +2,27 @@
 
 namespace Stage\Portfolio\Functions;
 
+use http\Exception\RuntimeException;
+
 class DataGetter
 {
-    public function getData($conn, string $table, int $id = null): array|false
+    private $conn;
+
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
+
+    public function getData(string $table, int $id = null): array|false
     {
         if ($id !== null)
         {
-            $stmt = $conn->prepare("SELECT * FROM $table WHERE id = ?");
+            $stmt = $this->conn->prepare("SELECT * FROM $table WHERE id = ?");
             $stmt->bind_param("i", $id);
         }
         else
         {
-            $stmt = $conn->prepare("SELECT * FROM $table");
+            $stmt = $this->conn->prepare("SELECT * FROM $table");
         }
 
         if ($stmt)

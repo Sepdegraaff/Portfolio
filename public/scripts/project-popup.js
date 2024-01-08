@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const projectPopUp = document.getElementById("project-popup");
     const popUpOpeners = document.querySelectorAll('.pop-up-opener');
+    const popUpCloser = document.getElementById("closePopup");
+
+    popUpCloser?.addEventListener("click", () => {
+        projectPopUp.classList.remove("translate-x-0");
+        projectPopUp.classList.add("translate-x-[-100%]");
+    });
 
     popUpOpeners.forEach((el) => el.addEventListener("click", () => {
-        toggleClasses(projectPopUp, ["hidden", "flex"]);
+        projectPopUp.classList.remove("translate-x-[-100%]");
+        projectPopUp.classList.add("translate-x-0");
 
         const projectId = el.getAttribute('data-project-id');
         loadData(projectId);
     }));
 
-    function toggleClasses(element, classes) {
-        classes.forEach((className) => {
-            element.classList.toggle(className);
-        });
-    }
 });
 
 const loadData = (projectId) => {

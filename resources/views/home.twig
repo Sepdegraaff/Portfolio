@@ -2,43 +2,44 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
-    <div class="flex {{ mainBgOne}} w-full h-screen max-h-screen text-pink-200">
+    <div class="flex {{ mainBgOne}} w-full h-screen max-h-screen text-gray-100">
 
         <div class="flex flex-col p-12 gap-12 m-auto text-center">
-            <h1 class="hidden-animation transition-all duration-1000 text-[18rem]">Welkom!</h1>
-            <h2 class="hidden-animation transition-all duration-1000 delay-150 text-4xl">Portfolio website: Sep de Graaff</h2>
+            <h1 class="hidden-animation transition-all duration-1000 text-[12vw]">Welkom!</h1>
+            <h2 class="hidden-animation transition-all duration-1000 delay-150 text-[2vw]">Portfolio website: Sep de Graaff</h2>
         </div>
 
     </div>
 
-    <div id="navigation" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen justify-center text-red-300">
+    <div id="navigation" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen justify-center text-gray-300">
 
         <div class="flex flex-col gap-12 items-center w-full">
 
-            <div class="flex flex-row gap-12 absolute self-end justify-self-end p-16">
+            <div class="flex flex-row gap-12 absolute self-end justify-self-end items-center p-16">
 
-                <p class="hidden-animation transition-all duration-1000 text-xl">Gebruik het menu om te navigeren &rarr;</p>
+                <p class="hidden-animation transition-all duration-1000 text-[2vw]">Gebruik het menu om te navigeren &rarr;</p>
 
-                <div id="menuOpen" class="menu flex min-w-[125px] text-center items-center justify-center cursor-pointer rounded-2xl bg-red-300 shadow-2xl text-black transition-all duration-1000 delay-300">
+                <div id="menuOpen" class="menu flex min-w-[125px] h-8 text-center items-center justify-center cursor-pointer rounded-2xl bg-gray-300 shadow-2xl text-black transition-all duration-1000 delay-300">
                     <span>Menu</span>
                 </div>
 
-                <div id="menu" class="hidden flex-col min-w-[125px] transition-all duration-1000 delay-300">
+                <div id="menu" class="hidden flex-col min-w-[125px] h-8 transition-all duration-1000 delay-300">
                     <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Over-mij">Over mij</a>
                     <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Trotse-projecten">Trotse projecten</a>
+                    <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Ervaringen">Ervaringen</a>
                 </div>
 
             </div>
 
             <div class="flex flex-row h-full justify-center items-center">
-                <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">Zullen we beginnen?</h2>
+                <h2 class="hidden-animation transition-all duration-1000 text-[10vw]">Zullen we beginnen?</h2>
             </div>
 
         </div>
 
     </div>
 
-    <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen max-h-screen text-pink-200">
+    <div id="Over-mij" class="flex flex-col {{ mainBgOne }} w-full h-screen max-h-screen text-gray-100">
 
         <div class="flex absolute right-0 p-12">
             <a class="text-2xl" href="#navigation">&uarr;</a>
@@ -46,32 +47,41 @@
 
         <div class="flex flex-col p-12 gap-12">
 
-            <h2 class="hidden-animation transition-all duration-1000 text-[10rem] max-w-max">
+            <h2 class="hidden-animation transition-all duration-1000 text-[10vw] max-w-max">
                 Over mij
             </h2>
-            <p class="hidden-animation transition-all duration-1000 delay-150 text-xl max-w-[1200px] pl-4">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at est iste, modi molestias nihil numquam odit veniam. Beatae corporis impedit ipsum iure praesentium quaerat quam ratione reiciendis ullam vitae.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio minima, quaerat? Cum, harum, suscipit. Beatae consequatur dolores facere laudantium quam! Inventore repellendus repudiandae sed! Facere nisi obcaecati porro rem voluptatem.
+            <p class="hidden-animation transition-all duration-1000 delay-150 text-[1.5vw] max-w-[1200px]">
+                {{ paragraphdata[0].text_data }}
             </p>
 
         </div>
 
     </div>
 
-    <div id="Trotse-projecten" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen text-red-300">
+    <div id="Trotse-projecten" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen text-gray-300">
 
-        <div id="project-popup" class="absolute z-20 hidden w-full h-full bg-gray-950/50">
-            <div id="project" class="flex flex-col max-w-[95%] h-[800px] xl:max-w-[1400px] px-12 {{ mainBgOne }} rounded-2xl m-auto justify-center">
+        <div id="project-popup" class="absolute z-20 flex translate-x-[-100%] w-full h-full bg-gray-950/50 transition-all duration-500">
+            <div class="flex flex-col m-auto">
+
+                <div class="flex relative">
+                    <div id="closePopup" class="p-6 absolute right-0 cursor-pointer">
+                        <img class="w-6" src="images/icons/cross.svg" alt="close">
+                    </div>
+                </div>
+
+                <div id="project" class="flex flex-col gap-12 px-12 {{ mainBgOne }} max-w-[95%] h-[800px] xl:max-w-[1400px] rounded-2xl m-auto justify-center">
+
+                </div>
 
             </div>
         </div>
 
-        <div class="flex absolute right-0 p-12 z-50">
+        <div class="flex absolute right-0 p-12">
             <a class="text-2xl" href="#navigation">&uarr;</a>
         </div>
 
         <div class="flex flex-col p-12 gap-12">
-            <h2 class="hidden-animation transition-all duration-1000 text-[10rem]">
+            <h2 class="hidden-animation transition-all duration-1000 text-[8vw]">
                 Trotse projecten
             </h2>
 
@@ -81,7 +91,7 @@
                     <li style="transition-delay: {{ delay }}ms;" class="flex hidden-animation transition-all duration-1000 project-holder max-w-max">
 
                         <div class="flex flex-col opacity-0 w-0 transition-all duration-500 absolute h-full rounded-2xl project">
-                            <span data-project-id="{{ projects[loop.index0].id }}" class="pop-up-opener border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-pink-200 cursor-pointer">Lees meer</span>
+                            <span data-project-id="{{ projects[loop.index0].id }}" class="pop-up-opener border-b-2 border-b-transparent hover:border-b-pink-200 transition-all m-auto text-3xl text-gray-100 cursor-pointer">Lees meer</span>
                         </div>
 
                         <img class="w-[30rem] rounded-2xl" src="images/projects/{{ projects[loop.index0].main_image_link }}" alt="project1">
@@ -89,6 +99,111 @@
                     </li>
                 {% endfor %}
             </ul>
+
+        </div>
+
+    </div>
+
+    <div id="Ervaringen" class="flex flex-col {{ mainBgOne }} w-full h-screen max-h-screen text-gray-100">
+
+        <div class="flex absolute right-0 p-12">
+            <a class="text-2xl" href="#navigation">&uarr;</a>
+        </div>
+
+        <div class="flex flex-col px-12 pt-12 pb-4">
+
+            <h2 class="hidden-animation transition-all duration-1000 text-[8vw] max-w-max">
+                Ervaringen
+            </h2>
+
+        </div>
+
+        <div class="flex flex-col max-w-max">
+
+            <div class="flex flex-col px-12">
+                <h2 class="hidden-animation transition-all duration-1000 text-[1.5vw] max-w-max p-2">
+                    Scholing:
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 place-items-center max-w-max p-12 gap-6">
+
+                <div class="flex flex-col gap-2 hidden-animation rounded-2xl min-w-[300px] shadow hover:shadow-2xl transition-all duration-1000 p-6 relative text-[1vw]">
+
+                    <h3>
+                        Koning Willem 1 College
+                    </h3>
+                    <p>
+                        2021 - Heden
+                    </p>
+                    <hr>
+                    <p>
+                        Software development - niveau 4
+                    </p>
+
+                    <a class="w-full h-full block absolute" target="_blank" href="https://www.kw1c.nl/opleidingen/software-developer-bol/"></a>
+                </div>
+
+                <div class="flex flex-col gap-2 hidden-animation rounded-2xl min-w-[300px] shadow hover:shadow-2xl transition-all duration-1000 delay-150 p-6 relative text-[1vw]">
+
+                    <h3>
+                        Willem van oranje college
+                    </h3>
+                    <p>
+                        2017 - 2021
+                    </p>
+                    <hr>
+                    <p>
+                        Vmbo/Mavo - GT
+                    </p>
+
+                    <a class="w-full h-full block absolute" target="_blank" href="https://willemvanoranjecollege.nl/"></a>
+                </div>
+
+            </div>
+
+
+            <div class="flex flex-col px-12">
+                <h2 class="hidden-animation transition-all duration-1000 delay-150 text-[1.5vw] max-w-max p-2">
+                    Werk/stages:
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 place-items-center max-w-max p-12 gap-6">
+
+                <div class="flex flex-col gap-2 hidden-animation rounded-2xl min-w-[300px] shadow hover:shadow-2xl transition-all duration-1000 delay-300 p-6 relative text-[1vw]">
+
+                    <h3>
+                        MaxServ
+                    </h3>
+                    <p>
+                        2023 - Heden
+                    </p>
+                    <hr>
+                    <p>
+                        Junior software developer - Stagiair
+                    </p>
+
+                    <a class="w-full h-full block absolute" target="_blank" href="https://www.maxserv.com/"></a>
+                </div>
+
+                <div class="flex flex-col gap-2 hidden-animation rounded-2xl min-w-[300px] shadow hover:shadow-2xl transition-all duration-1000 delay-500 p-6 relative text-[1vw]">
+
+                    <h3>
+                        Dominos Waalwijk
+                    </h3>
+                    <p>
+                        2021 - Heden
+                    </p>
+                    <hr>
+                    <p>
+                        Fietsbezorger
+                    </p>
+
+                    <a class="w-full h-full block absolute" target="_blank" href="https://www.dominos.nl/"></a>
+                </div>
+
+            </div>
 
         </div>
 
